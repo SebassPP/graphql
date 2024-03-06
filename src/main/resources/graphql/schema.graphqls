@@ -1,0 +1,23 @@
+type Estudiante{
+    id: Int! #El signo de exclamación indica que el campo es obligatorio
+    nombre: String!
+    apellido: String!
+    porcentajeBeca: Int,
+    carrera: Carrera!
+    materiasCursadas: [String],
+
+
+}
+
+type Carrera{
+    nombre: String!
+    facultad: String!
+    cantidadSemestres: Int!
+    directorPrograma: String!
+}
+
+type Query{
+    consultarEstudiante(codigoEstudiante:Int): Estudiante
+
+    consiltarEstudiantesPorCarrera(codigoCarrera:Int): [Estudiante]
+}
